@@ -3,80 +3,80 @@ import {
   Drawer as MUIDrawer,
   ListItem,
   List,
-  ListItemIcon,
-  ListItemText
 } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import { withRouter } from "react-router-dom";
 import Divider from '@material-ui/core/Divider';
-import '../css/style.css'
+import '../css/style.css';
 
 const useStyles = makeStyles({
   root: {
     background: '#2c3438',
     width: "190px",
-    boxShadow: '8px 1px 19px -4px rgba(0,0,0,0.5)',
-  }
+    boxShadow: '8px 1px 19px -4px rgba(0,0,0,0.5)'
+  },
 });
 
 const Drawer = props => {
   const { history } = props;
   const classes = useStyles();
+  const handleClick = (pathname) => history.push(`/${pathname}`);
   const infoOptions = [
     {
-      text: "Proiect",
-      onClick: () => history.push("/")
+      text: "Proiect"
     },
     {
-      text: "Compresie",
-      onClick: () => history.push("/Compresie")
+      text: "Compresie"
     },
     {
-      text: "Istoric",
-      onClick: () => history.push("/Istoric")
+      text: "Istoric"
     }
   ];
   const compressionOptions = [
     {
-      text: "Foto",
-      onClick: () => history.push("/Foto")
+      text: "Foto"
     },
     {
-      text: "Audio",
-      onClick: () => history.push("/Audio")
+      text: "Audio"
     },
     {
-      text: "Video",
-      onClick: () => history.push("/Video")
+      text: "Video"
     }
   ];
   const demoOptions = [
     {
-      text: "Huffman Demo",
-      onClick: () => history.push("/HuffmanDemo")
+      text: "HuffmanDemo"
     }
   ];
   return (
       <div>
         <MUIDrawer variant="permanent" classes={{paper:classes.root}}>
-        <p class='drawer title'>{'Informații'}</p>
+        <p class='drawer title'>Informații</p>
         <List>
-            {infoOptions.map((item, index) => {
-            const { text, onClick } = item;
+            {infoOptions.map(item => {
+            const { text } = item;
             return (
-                <ListItem button key={text} onClick={onClick}>
+                <ListItem 
+                  button key={text} 
+                  onClick={() => handleClick(text)} 
+                  selected={window.location.pathname.includes(text)}
+                >
                  <p class='drawer'>{text}</p>
                 </ListItem>
             );
             })}
         </List>
         <Divider />
-        <p class='drawer title'>{'Compresie'}</p>
+        <p class='drawer title'>Compresie</p>
         <List>
-            {compressionOptions.map((item, index) => {
-            const { text, onClick } = item;
+            {compressionOptions.map(item => {
+            const { text } = item;
             return (
-                <ListItem button key={text} onClick={onClick}>
+              <ListItem 
+                button key={text} 
+                onClick={() => handleClick(text)} 
+                selected={window.location.pathname.includes(text)}
+              >
                  <p class='drawer'>{text}</p>
                 </ListItem>
             );
@@ -84,10 +84,14 @@ const Drawer = props => {
         </List>
         <Divider />
         <List>
-            {demoOptions.map((item, index) => {
-            const { text, onClick } = item;
+            {demoOptions.map(item => {
+            const { text } = item;
             return (
-                <ListItem button key={text} onClick={onClick}>
+              <ListItem 
+                button key={text} 
+                onClick={() => handleClick(text)} 
+                selected={window.location.pathname.includes(text)}
+              >
                 <p class='drawer'>{text}</p>
                 </ListItem>
             );
