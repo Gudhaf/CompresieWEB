@@ -24,7 +24,7 @@ export default function App() {
       <Drawer />
       <Switch>
         <div class='margin'>
-            <Route exact path="/" render={props => <Proiect {...props} />} />
+            <Route exact path="/Proiect" render={props => <Proiect {...props} />} />
             <Route exact path="/Compresie" render={props => <Compresie {...props} />} />
             <Route exact path="/Istoric" render={props => <Istoric {...props} />} />
             <Route exact path="/Foto" render={props => <Foto {...props} />} />

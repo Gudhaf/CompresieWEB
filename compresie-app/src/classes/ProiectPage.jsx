@@ -3,7 +3,7 @@ import React from "react";
 const Proiect = () => {
   return (
     <div>
-      <h1>Informașii despre proiect</h1>
+      <h1>Informatii despre proiect</h1>
       <p>
         industry.Section 1.10.32 of "de Finibu
         <br />s Bonorum et Malorum", written by Cicero in 45 BC "Sed ut persp
