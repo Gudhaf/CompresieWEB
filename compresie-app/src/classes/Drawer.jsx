@@ -4,7 +4,8 @@ import {
   ListItem,
   List,
 } from "@material-ui/core";
-import { makeStyles } from "@material-ui/core/styles";
+import MuiListItem from "@material-ui/core/ListItem";
+import { makeStyles, withStyles } from "@material-ui/core/styles";
 import { withRouter } from "react-router-dom";
 import Divider from '@material-ui/core/Divider';
 import '../css/style.css';
@@ -13,9 +14,15 @@ const useStyles = makeStyles({
   root: {
     background: '#2c3438',
     width: "190px",
-    boxShadow: '8px 1px 19px -4px rgba(0,0,0,0.5)'
+    boxShadow: '8px 1px 19px -4px rgba(0,0,0,0.5)',
+    MuiListItem: {
+      selected: {}
+    }
   },
 });
+
+
+
 
 const Drawer = props => {
   const { history } = props;
@@ -76,6 +83,7 @@ const Drawer = props => {
                 button key={text} 
                 onClick={() => handleClick(text)} 
                 selected={window.location.pathname.includes(text)}
+                className="ListItems"
               >
                  <p class='drawer'>{text}</p>
                 </ListItem>
@@ -88,9 +96,10 @@ const Drawer = props => {
             const { text } = item;
             return (
               <ListItem 
-                button key={text} 
-                onClick={() => handleClick(text)} 
+                button key={text}
+                onClick={() => handleClick(text)}
                 selected={window.location.pathname.includes(text)}
+                
               >
                 <p class='drawer'>{text}</p>
                 </ListItem>

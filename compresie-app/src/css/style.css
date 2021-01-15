@@ -1,11 +1,14 @@
-.title{
-    text-align: center;
-    font-size: larger;
-    font-variant: small-caps;
+.title {
+  text-align: center;
+  font-size: larger;
+  font-variant: small-caps;
 }
-.whiteT{
-    color: white;
+.whiteT {
+  color: white;
 }
-.drawer{
-    color:#6bd2e3;
+.drawer {
+  color: #6bd2e3;
+}
+.ListItems.Mui-selected {
+  background-color: blue;
 }
